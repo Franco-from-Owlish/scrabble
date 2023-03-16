@@ -22,7 +22,7 @@ def main(in_file: str, out_file: str):
             o.writelines(SQL_FILE_TEMPLATE)
             lines = f.readlines()
             for line in lines:
-                word = line.strip()
+                word = line.strip().lower()
                 o.writelines(f"INSERT INTO 'words' VALUES ('{word}','{word[0]}',{len(word)});\n")
         o.writelines("COMMIT;")
 
