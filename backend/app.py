@@ -55,7 +55,6 @@ def get_new_sentence():
     if sentence:
         words = sentence.strip().split(' ')
         for word in words:
-            print(word)
             new_sentence += replace_word(word) + " "
 
     return {
