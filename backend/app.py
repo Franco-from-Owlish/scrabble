@@ -32,7 +32,16 @@ def index():  # put application's code here
     return render_template('index.html')
 
 
-@app.route('api/sentence', methods=['POST'])
+@app.route('/test')
+def test():  # put application's code here
+    """
+    The home page
+    :return: A vue.js app
+    """
+    return 'Hello world!'
+
+
+@app.route('/api/sentence', methods=['POST'])
 def get_new_sentence():
     """
     Endpoint to create the new sentence.
