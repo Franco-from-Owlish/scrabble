@@ -11,7 +11,7 @@ cursor = connection.cursor()
 
 # The Flask server
 app = Flask(__name__)
-CORS(app, origins=['*'])
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 @app.errorhandler(404)
