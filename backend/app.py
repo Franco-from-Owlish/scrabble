@@ -5,15 +5,13 @@ from flask import Flask, request, render_template, redirect
 from flask_cors import CORS
 
 # Connect to the DB
-connection = sqlite3.connect("scrabble.db", check_same_thread=False)
+connection = sqlite3.connect("./scrabble.db", check_same_thread=False)
 # Create a cursor to query the DB
 cursor = connection.cursor()
 
 # The Flask server
-app = Flask(
-    __name__
-)
-CORS(app)
+app = Flask(__name__)
+CORS(app, origins=['*'])
 
 
 @app.errorhandler(404)

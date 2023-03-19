@@ -59,6 +59,8 @@ async function submit() {
   };
   const response = await fetch('https://francogcc.pythonanywhere.com/api/sentence', requestOptions);
   console.log(response)
+  const json = await response.json()
+  console.log(json)
   if (response.status === 200) {
     const json = await response.json()
     console.log(json)
