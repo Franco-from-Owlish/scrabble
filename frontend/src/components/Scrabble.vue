@@ -54,11 +54,14 @@ async function submit() {
     body: form,
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded',
-    }
+    },
+    redirect: "follow"
   };
-  const response = await fetch('https://francogcc.pythonanywhere.com/sentence/', requestOptions);
-  console.log(response);
-  if (response.status === 201) {
+  const response = await fetch('https://francogcc.pythonanywhere.com/api/sentence', requestOptions);
+  console.log(response)
+  if (response.status === 200) {
+    const json = await response.json()
+    console.log(json)
     newSentence.value = (await response.json())["new_sentence"];
   } else {
     newSentence.value = null;

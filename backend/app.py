@@ -11,8 +11,7 @@ cursor = connection.cursor()
 
 # The Flask server
 app = Flask(
-    __name__,
-    static_url_path='/assets',
+    __name__
 )
 CORS(app)
 
