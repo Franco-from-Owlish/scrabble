@@ -32,7 +32,7 @@ def index():  # put application's code here
     return render_template('index.html')
 
 
-@app.route('/sentence', methods=['POST'])
+@app.route('api/sentence', methods=['POST'])
 def get_new_sentence():
     """
     Endpoint to create the new sentence.
