@@ -10,8 +10,12 @@ connection = sqlite3.connect("scrabble.db", check_same_thread=False)
 cursor = connection.cursor()
 
 # The Flask server
-app = Flask(__name__)
+app = Flask(
+    __name__,
+    static_url_path='/assets',
+)
 CORS(app)
+
 
 @app.errorhandler(404)
 def page_not_found(e):
